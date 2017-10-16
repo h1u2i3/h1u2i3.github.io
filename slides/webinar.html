@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="@h1u2i3">
+  <title>直播探索</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">直播探索</h1>
+  <p class="author"><span class="citation" data-cites="h1u2i3">@h1u2i3</span></p>
+</section>
+
+<section><section id="前提" class="titleslide slide level1"><h1>前提</h1></section><section id="webinar2you-demo" class="slide level2">
+<h2>Webinar2you Demo</h2>
+<ol type="1">
+<li>类似直播的需求(音视频+聊天)</li>
+<li>需要共享桌面</li>
+<li>直播视频存储在云端</li>
+<li>支持全平台浏览器</li>
+</ol>
+</section><section id="prototype" class="slide level2">
+<h2>Prototype</h2>
+<figure>
+<img src="images/webinar.png" alt="Preview" style="width:70.0%" /><figcaption>Preview</figcaption>
+</figure>
+</section></section>
+<section><section id="技术探索" class="titleslide slide level1"><h1>技术探索</h1></section><section id="总览" class="slide level2">
+<h2>总览</h2>
+<figure>
+<img src="images/progress.jpg" alt="直播流程" style="width:80.0%" /><figcaption>直播流程</figcaption>
+</figure>
+</section><section id="数据采集" class="slide level2">
+<h2>数据采集</h2>
+<ol type="1">
+<li>Obs(https://obsproject.com/)</li>
+<li>StreamApi(getUserMedia)</li>
+</ol>
+</section><section id="getusermedia" class="slide level2">
+<h2>getUserMedia</h2>
+<figure>
+<img src="images/support.png" alt="Support" style="width:80.0%" /><figcaption>Support</figcaption>
+</figure>
+</section><section id="推流数据传输" class="slide level2">
+<h2>推流(数据传输)</h2>
+<ol type="1">
+<li>Rtmp</li>
+<li>HLS</li>
+<li>WebRtc</li>
+</ol>
+</section><section id="rtmpflash-gateway" class="slide level2">
+<h2>Rtmp(Flash) Gateway</h2>
+<ol type="1">
+<li>Red5</li>
+</ol>
+</section><section id="webrtc-gateway" class="slide level2">
+<h2>WebRtc GateWay</h2>
+<ol type="1">
+<li>janus-gateway</li>
+<li>kurento</li>
+</ol>
+</section><section id="janus-gateway" class="slide level2">
+<h2>janus-gateway</h2>
+<ul>
+<li>janus-protocol (协议)</li>
+<li>RubbitMQ (队列工具)</li>
+<li>MQTT</li>
+<li>支持录制视频</li>
+<li>Javascript SDK</li>
+</ul>
+</section><section id="kurento" class="slide level2">
+<h2>kurento</h2>
+<ul>
+<li>kurento-protocal (协议)</li>
+<li>支持录制视频</li>
+<li>Gstream(filter/hub)</li>
+<li>Javascript SDK</li>
+</ul>
+</section></section>
+<section><section id="技术方案" class="titleslide slide level1"><h1>技术方案</h1></section><section id="总览-1" class="slide level2">
+<h2>总览</h2>
+</section><section id="数据采集-1" class="slide level2">
+<h2>数据采集</h2>
+<h3 id="electron">Electron</h3>
+<ol type="1">
+<li>chrome 内核 &amp; kurento-client-js</li>
+<li>getUserMedia/StreamApi</li>
+</ol>
+</section><section id="推流" class="slide level2">
+<h2>推流</h2>
+<ol type="1">
+<li>kurento-client</li>
+<li>Webrtc</li>
+</ol>
+</section><section id="gateway" class="slide level2">
+<h2>Gateway</h2>
+<ol type="1">
+<li>Kurento 录制视频/转发WebRtc流</li>
+<li>WebRtc 转 Rtmp (解决跨平台问题)</li>
+</ol>
+</section><section id="播放器" class="slide level2">
+<h2>播放器</h2>
+<h3 id="video.js">Video.js</h3>
+<ol type="1">
+<li>WebRtc</li>
+<li>Rtmp(nginx-rtmp-module)</li>
+</ol>
+</section></section>
+<section><section id="demo" class="titleslide slide level1"><h1>Demo</h1></section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
