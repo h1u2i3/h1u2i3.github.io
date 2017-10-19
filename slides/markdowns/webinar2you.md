@@ -54,7 +54,7 @@ author: "@h1u2i3"
 3. Http-flv
 4. WebRtc
 
-# 服务器
+# 服务器/MCU
 
 ## Rtmp(Flash) Gateway
 
@@ -93,9 +93,17 @@ author: "@h1u2i3"
 1. chrome 内核 & kurento-client-js
 2. getUserMedia/StreamApi
 
+```javascript
+navigator.getUserMedia()
+```
+
 ## 推流
 1. kurento-client
 2. Webrtc
+
+```javascript
+kurentoUtils.WebRtcPeer.WebRtcPeerSendonly()
+```
 
 ## Gateway
 1. Kurento 录制视频/转发WebRtc流
