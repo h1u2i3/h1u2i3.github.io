@@ -21,6 +21,10 @@ author: "@h1u2i3"
 
 ![简单直播流程](images/simple_progress.png){ width=50% }
 
+## WebRtc
+
+![WebRtc P2P](images/webrtc_p2p.png){ width=40% }
+
 ## 复杂架构
 
 ![直播流程](images/progress.jpg){ width=80% }
@@ -46,7 +50,7 @@ author: "@h1u2i3"
 ## 拉流(播放)
 
 1. Rtmp(Flash插件, 不支持 Html5, rtmp://)
-2. HLS(http://...simple.m3u8)
+2. HLS(.m3u8)
 3. Http-flv
 4. WebRtc
 
