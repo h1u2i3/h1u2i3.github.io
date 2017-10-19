@@ -17,12 +17,12 @@
       <source src="rtmp://stage.yimei.io/live/2" type='rtmp/flv'>
     </video> -->
     <video id="my_video" class="video-js vjs-default-skin" controls preload="auto"
-     width="800" height="480">
+     width="800" height="480" autoplay="true">
       <source src="http://stage.yimei.io/hls/2/index.m3u8" type="application/x-mpegURL">
     </video>
     <script type="text/javascript">
-      var player = videojs('my_video');
-      player.play();
-    </script>
+    var player = videojs('my_video');
+player.play();
+</script>
   </body>
 </html>
