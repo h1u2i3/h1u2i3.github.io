@@ -56,7 +56,7 @@ author: "@h1u2i3"
 
 # 服务器/MCU
 
-## Rtmp(Flash) Gateway
+## Rtmp/HLS Server
 
 1. Red5
 ...
