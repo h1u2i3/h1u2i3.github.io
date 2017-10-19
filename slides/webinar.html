@@ -46,16 +46,22 @@
 <img src="images/webinar.png" alt="Preview" style="width:70.0%" /><figcaption>Preview</figcaption>
 </figure>
 </section></section>
-<section><section id="技术探索" class="titleslide slide level1"><h1>技术探索</h1></section><section id="总览" class="slide level2">
-<h2>总览</h2>
+<section><section id="直播简介" class="titleslide slide level1"><h1>直播简介</h1></section><section id="简单架构" class="slide level2">
+<h2>简单架构</h2>
+<figure>
+<img src="images/simple_progress.png" alt="简单直播流程" style="width:50.0%" /><figcaption>简单直播流程</figcaption>
+</figure>
+</section><section id="复杂架构" class="slide level2">
+<h2>复杂架构</h2>
 <figure>
 <img src="images/progress.jpg" alt="直播流程" style="width:80.0%" /><figcaption>直播流程</figcaption>
 </figure>
-</section><section id="数据采集" class="slide level2">
+</section></section>
+<section><section id="详细介绍" class="titleslide slide level1"><h1>详细介绍</h1></section><section id="数据采集" class="slide level2">
 <h2>数据采集</h2>
 <ol type="1">
 <li>Obs(https://obsproject.com/)</li>
-<li>StreamApi(getUserMedia)</li>
+<li>StreamApi(getUserMedia) ...</li>
 </ol>
 </section><section id="getusermedia" class="slide level2">
 <h2>getUserMedia</h2>
@@ -69,10 +75,19 @@
 <li>HLS</li>
 <li>WebRtc</li>
 </ol>
-</section><section id="rtmpflash-gateway" class="slide level2">
+</section><section id="拉流播放" class="slide level2">
+<h2>拉流(播放)</h2>
+<ol type="1">
+<li>Rtmp(Flash插件, 不支持 Html5, rtmp://)</li>
+<li>HLS(http://...simple.m3u8)</li>
+<li>Http-flv</li>
+<li>WebRtc</li>
+</ol>
+</section></section>
+<section><section id="服务器" class="titleslide slide level1"><h1>服务器</h1></section><section id="rtmpflash-gateway" class="slide level2">
 <h2>Rtmp(Flash) Gateway</h2>
 <ol type="1">
-<li>Red5</li>
+<li>Red5 ...</li>
 </ol>
 </section><section id="webrtc-gateway" class="slide level2">
 <h2>WebRtc GateWay</h2>
@@ -98,8 +113,11 @@
 <li>Javascript SDK</li>
 </ul>
 </section></section>
-<section><section id="技术方案" class="titleslide slide level1"><h1>技术方案</h1></section><section id="总览-1" class="slide level2">
+<section><section id="技术选择" class="titleslide slide level1"><h1>技术选择</h1></section><section id="总览" class="slide level2">
 <h2>总览</h2>
+<figure>
+<img src="images/structure.png" alt="结构图" style="width:70.0%" /><figcaption>结构图</figcaption>
+</figure>
 </section><section id="数据采集-1" class="slide level2">
 <h2>数据采集</h2>
 <h3 id="electron">Electron</h3>
@@ -124,7 +142,7 @@
 <h3 id="video.js">Video.js</h3>
 <ol type="1">
 <li>WebRtc</li>
-<li>Rtmp(nginx-rtmp-module)</li>
+<li>Rtmp/HLS (nginx-rtmp-module)</li>
 </ol>
 </section></section>
 <section><section id="demo" class="titleslide slide level1"><h1>Demo</h1></section></section>

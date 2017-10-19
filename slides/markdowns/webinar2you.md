@@ -15,16 +15,23 @@ author: "@h1u2i3"
 
 ![Preview](images/webinar.png){ width=70% }
 
-# 技术探索
+# 直播简介
 
-## 总览
+## 简单架构
+
+![简单直播流程](images/simple_progress.png){ width=50% }
+
+## 复杂架构
 
 ![直播流程](images/progress.jpg){ width=80% }
+
+# 详细介绍
 
 ## 数据采集
 
 1. Obs(https://obsproject.com/)
 2. StreamApi(getUserMedia)
+...
 
 ## getUserMedia
 
@@ -36,9 +43,19 @@ author: "@h1u2i3"
 2. HLS
 3. WebRtc
 
+## 拉流(播放)
+
+1. Rtmp(Flash插件, 不支持 Html5, rtmp://)
+2. HLS(http://...simple.m3u8)
+3. Http-flv
+4. WebRtc
+
+# 服务器
+
 ## Rtmp(Flash) Gateway
 
 1. Red5
+...
 
 ## WebRtc GateWay
 
@@ -60,9 +77,11 @@ author: "@h1u2i3"
 - Gstream(filter/hub)
 - Javascript SDK
 
-# 技术方案
+# 技术选择
 
 ## 总览
+
+![结构图](images/structure.png){ width=70% }
 
 ## 数据采集
 
@@ -81,6 +100,6 @@ author: "@h1u2i3"
 ## 播放器
 ### Video.js
 1. WebRtc
-2. Rtmp(nginx-rtmp-module)
+2. Rtmp/HLS (nginx-rtmp-module)
 
 # Demo
